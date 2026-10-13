@@ -1,69 +1,90 @@
-import Image from "next/image";
+import { Marquee } from "@/components/fx/Marquee";
+import { Reveal } from "@/components/fx/Reveal";
+import { ScrollWords } from "@/components/fx/ScrollWords";
+import { Tilt } from "@/components/fx/Tilt";
+import { Hero } from "@/components/home/Hero";
+import { HorizontalRail } from "@/components/home/HorizontalRail";
+import { StackCards } from "@/components/home/StackCards";
+import { Stats } from "@/components/home/Stats";
+import { Testimonials } from "@/components/home/Testimonials";
+import { CTABand } from "@/components/ui/CTABand";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { homeRail, homeStack, pillars } from "@/lib/data";
+import { stats } from "@/lib/site";
 
-export default function Home() {
+const marqueeItems = [
+  "ACP Sheets",
+  "HPL Sheets",
+  "WPC & PVC Foam Sheets",
+  "Door Skins",
+  "Partition Panels",
+  "WPC Louvers",
+  "GI Louvers",
+  "Copper Sheets",
+  "ZCP Sheets",
+  "Aluminium Windows",
+  "Enox Hardware",
+];
+
+const statement =
+  "At VIJIN, we are dedicated to providing high-quality materials for modern construction and design. Our products are designed for strength, weather resistance, and versatility, making them ideal for various applications, from facades to furniture.";
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <Hero />
+
+      <section aria-label="What we supply" className="border-y border-line bg-surface py-6 font-display text-2xl text-brand md:text-4xl">
+        <Marquee items={marqueeItems} />
+      </section>
+
+      <section className="mx-auto max-w-5xl px-5 py-28 md:px-8 md:py-44">
+        <p className="mb-8 text-sm font-semibold uppercase tracking-[0.22em] text-accent-ink">Who we are</p>
+        <ScrollWords text={statement} className="font-display text-3xl leading-[1.25] md:text-5xl" />
+      </section>
+
+      <HorizontalRail items={homeRail} />
+
+      <section className="pb-24 pt-28 md:pt-40">
+        <div className="mx-auto mb-14 max-w-7xl px-5 md:mb-20 md:px-8">
+          <SectionHeading eyebrow="Featured" title="Materials with a finish for every elevation" />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <StackCards items={homeStack} />
+      </section>
+
+      <section className="bg-surface py-24 md:py-36">
+        <div className="mx-auto max-w-7xl px-5 md:px-8">
+          <SectionHeading eyebrow="Why choose our products" title="Built to last. Made to look right." className="mb-14" />
+          <div className="grid gap-6 md:grid-cols-3">
+            {pillars.map((p, i) => (
+              <Reveal key={p.title} delay={i * 0.1} className="h-full">
+                <Tilt className="rounded-3xl">
+                  <div className="flex h-full flex-col gap-4 rounded-3xl bg-white p-8 shadow-soft ring-1 ring-line md:p-10">
+                    <span className="font-display text-6xl text-accent">0{i + 1}</span>
+                    <h3 className="font-display text-3xl">{p.title}</h3>
+                    <p className="text-ink-muted">{p.text}</p>
+                    <ul className="mt-auto flex flex-wrap gap-2 pt-4">
+                      {p.points.map((pt) => (
+                        <li key={pt} className="rounded-full bg-surface px-3 py-1 text-xs font-medium text-brand">{pt}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </Tilt>
+              </Reveal>
+            ))}
+          </div>
+          <div className="mt-20 md:mt-28">
+            <Stats stats={stats} />
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-24 md:px-8 md:py-36">
+        <SectionHeading eyebrow="Testimonials" title="Words from the people we build with" className="mb-14" />
+        <Testimonials />
+      </section>
+
+      <CTABand />
+    </>
   );
 }
