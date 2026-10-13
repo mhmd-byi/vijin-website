@@ -9,7 +9,9 @@ import { process, whyChoose } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "VIJIN provides high-quality materials for modern construction and design: WPC and PVC foam sheets, ACP, louvers and more.",
+  description:
+    "VIJIN is a trusted supplier of WPC and PVC foam sheets, ACP, WPC and GI louvers for architects, builders and designers. Based in Indore, M.P.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

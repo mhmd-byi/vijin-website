@@ -15,9 +15,17 @@ export async function generateMetadata({ params }: PageProps<"/product/[slug]">)
   const { slug } = await params;
   const p = getProduct(slug);
   if (!p) return {};
+  const title = p.brand === "Enox" ? `Enox ${p.name}` : p.name;
+  const description = p.intro
+    ? p.intro.length > 155
+      ? `${p.intro.slice(0, p.intro.lastIndexOf(" ", 152))}...`
+      : p.intro
+    : `${title} (${p.group}) from VIJIN, Indore. Contact us for specifications, finishes and the catalogue.`;
   return {
-    title: p.brand === "Enox" ? `Enox ${p.name}` : p.name,
-    description: p.intro ? p.intro.slice(0, 155) : `${p.name} from VIJIN's Enox hardware range. Contact us for specifications and the catalogue.`,
+    title,
+    description,
+    alternates: { canonical: `/product/${p.slug}` },
+    openGraph: { title, description, images: p.image ? [{ url: p.image, alt: p.alt ?? p.name }] : undefined },
   };
 }
 

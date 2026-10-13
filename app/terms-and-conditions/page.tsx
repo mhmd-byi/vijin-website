@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import { termsParagraphs } from "@/lib/legal";
 
-export const metadata: Metadata = { title: "Terms & Conditions", description: "Terms of Use for the VIJIN website." };
+export const metadata: Metadata = {
+  title: "Terms & Conditions",
+  description:
+    "Terms of Use for the VIJIN website, operated by VIJIN GLOBAL PRIVATE LIMITED, Indore. Governed by Indian law.",
+  alternates: { canonical: "/terms-and-conditions" },
+};
 
 export default function TermsPage() {
   return (

@@ -5,7 +5,9 @@ import { Gallery } from "@/components/ui/Gallery";
 
 export const metadata: Metadata = {
   title: "Our Works",
-  description: "Facades, gates, interiors and signage completed with VIJIN materials.",
+  description:
+    "Facades, gates, interiors and signage completed with VIJIN ACP, HPL and WPC materials. Browse the project gallery by category.",
+  alternates: { canonical: "/our-works" },
 };
 
 export default function OurWorksPage() {

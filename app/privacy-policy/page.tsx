@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import { privacySections } from "@/lib/legal";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = { title: "Privacy Policy", description: "How VIJIN GLOBAL PRIVATE LIMITED collects, uses and protects your personal data." };
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "How VIJIN GLOBAL PRIVATE LIMITED collects, uses, shares and protects your personal data through vijin.co.in.",
+  alternates: { canonical: "/privacy-policy" },
+};
 
 export default function PrivacyPage() {
   return (

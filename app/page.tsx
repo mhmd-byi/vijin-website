@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Marquee } from "@/components/fx/Marquee";
 import { Reveal } from "@/components/fx/Reveal";
 import { ScrollWords } from "@/components/fx/ScrollWords";
@@ -28,6 +29,13 @@ const marqueeItems = [
 
 const statement =
   "At VIJIN, we are dedicated to providing high-quality materials for modern construction and design. Our products are designed for strength, weather resistance, and versatility, making them ideal for various applications, from facades to furniture.";
+
+export const metadata: Metadata = {
+  title: { absolute: "VIJIN | Veneers, ACP & Panel Sheets in Indore" },
+  description:
+    "VIJIN, Indore: WPC and PVC foam sheets, ACP, HPL, door skins, partition panels, louvers, copper and zinc sheets, aluminium windows and Enox hardware.",
+  alternates: { canonical: "/" },
+};
 
 export default function HomePage() {
   return (

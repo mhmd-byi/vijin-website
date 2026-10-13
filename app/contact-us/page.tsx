@@ -6,7 +6,9 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact us",
-  description: `Contact VIJIN at ${site.address}. Call ${site.phones[0].display} or email ${site.email}.`,
+  description:
+    "Contact VIJIN at 169, Transport Nagar, Indore (M.P.) 452014. Call +91 78692 22073 or +91 78690 30789, or email sales@vijin.co.in.",
+  alternates: { canonical: "/contact-us" },
 };
 
 export default function ContactPage() {

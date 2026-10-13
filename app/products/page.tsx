@@ -6,7 +6,9 @@ import { products } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Products",
-  description: "Browse VIJIN's range: ACP, WPC/PVC sheets, door skins, partition panels, louvers, copper and zinc composite sheets, aluminium windows and Enox hardware.",
+  description:
+    "Browse 41 VIJIN products: ACP, WPC/PVC sheets, door skins, partition panels, louvers, copper and zinc sheets, aluminium windows and Enox hardware.",
+  alternates: { canonical: "/products" },
 };
 
 const filters = ["Sheets", "Louvers", "Doors & Interiors", "Facade & Openings", "Door Hardware", "Glass Fittings", "Shower", "Sliding Systems", "Furniture Fittings", "Profiles"];

@@ -7,7 +7,9 @@ import { enoxGroups, enoxProducts } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Enox Hardware",
-  description: "Enox door hardware, glass fittings, shower and sliding systems, and furniture fittings, supplied by VIJIN.",
+  description:
+    "Enox door hardware, glass fittings, shower and sliding systems and furniture fittings, supplied by VIJIN in Indore. Specifications on request.",
+  alternates: { canonical: "/enox" },
 };
 
 export default function EnoxPage() {

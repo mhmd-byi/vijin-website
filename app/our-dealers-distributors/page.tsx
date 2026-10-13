@@ -7,7 +7,9 @@ import { dealers } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Our Dealers & Distributors",
-  description: "Find VIJIN dealers and distributors across Madhya Pradesh.",
+  description:
+    "Find VIJIN dealers and distributors across Madhya Pradesh, including Bhopal, Jabalpur, Gwalior, Ujjain, Rewa and Ratlam, with phone numbers and addresses.",
+  alternates: { canonical: "/our-dealers-distributors" },
 };
 
 export default function DealersPage() {

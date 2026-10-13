@@ -8,7 +8,9 @@ import { catalogues } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Catalogues",
-  description: "Download VIJIN and Viva catalogues: ACP, HPL, louvers, signage and more.",
+  description:
+    "Download 30 VIJIN and Viva catalogues covering ACP, HPL, louvers, signage, natural stone and more. Choose your finish, then enquire.",
+  alternates: { canonical: "/catalogues" },
 };
 
 export default function CataloguesPage() {

@@ -20,7 +20,9 @@ export const metadata: Metadata = {
     title: "VIJIN | Veneers, ACP & Panel Sheets, Indore",
     description: site.description,
     locale: "en_IN",
+    images: [{ url: "/images/products/zcp-facade.jpg", alt: "VIJIN composite panel facade" }],
   },
+  twitter: { card: "summary_large_image" },
 };
 
 export const viewport: Viewport = { themeColor: "#f7f4ee" };
